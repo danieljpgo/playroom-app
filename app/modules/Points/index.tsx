@@ -9,7 +9,6 @@ import { SvgUri } from 'react-native-svg';
 const Points: React.FC = () => {
   const navigation = useNavigation();
 
-
   function handleNavigationBack() {
     navigation.goBack();
   }
@@ -21,6 +20,7 @@ const Points: React.FC = () => {
   return (
     <>
       <View style={styles.container}>
+        {/* @TODO Criar um component de back */}
         <TouchableOpacity onPress={handleNavigationBack}>
           <Icon name="arrow-left" size={20} color="#34cb79" />
         </TouchableOpacity>
