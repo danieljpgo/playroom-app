@@ -65,8 +65,8 @@ const Points: React.FC = () => {
     navigation.goBack();
   }
 
-  function handleNavigationDetail() {
-    navigation.navigate('Details')
+  function handleNavigationDetail(id: number) {
+    navigation.navigate('Details', { id })
   }
 
   function handleSelectItem(id: number) {
@@ -81,8 +81,6 @@ const Points: React.FC = () => {
 
   const loadingMap = (<Text>Loading...</Text>) // @TODO Criar um loading melhor
   const loadingItems = (<Text>Loading...</Text>) // @TODO Criar um loading melhor
-
-  console.log('ai papai', points)
 
   return (
     <>
@@ -111,7 +109,7 @@ const Points: React.FC = () => {
                     <Marker
                       key={String(point.id)}
                       style={styles.mapMarker}
-                      onPress={handleNavigationDetail}
+                      onPress={() => handleNavigationDetail(point.id)}
                       coordinate={{
                         latitude: point.latitude,
                         longitude: point.longitude,
