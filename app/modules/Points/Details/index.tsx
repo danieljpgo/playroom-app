@@ -53,7 +53,6 @@ const Details: React.FC = () => {
   }
 
   if (!data.point) {
-    console.log(data)
     return null;
   }
 
