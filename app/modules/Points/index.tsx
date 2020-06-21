@@ -163,6 +163,7 @@ const Points: React.FC = () => {
                     id={item.id}
                     title={item.title}
                     imageUrl={item.image_url}
+                    loading={false}
                     selected={selectedItems.includes(item.id)}
                     onSelect={handleSelectItem} />
                 )))

@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import { SvgUri } from 'react-native-svg';
-
+import SkeletonContent from 'react-native-skeleton-content';
 
 interface Props {
   id: number,
   title?: string,
   imageUrl?: string,
-  loading?: boolean;
+  loading: boolean;
   selected?: boolean;
   onSelect: (id: number) => void;
 }
@@ -27,24 +27,46 @@ const Item: React.FC<Props> = (props) => {
       <TouchableOpacity
         activeOpacity={0.6}
         style={[
-          styles.item,
-          selected ? styles.itemSelected : {}
+          styles.container,
+          selected ? styles.selected : {}
         ]}
         onPress={() => onSelect(id)}
       >
-        <SvgUri
-          width={42}
-          height={42}
-          uri={imageUrl || null}>
-        </SvgUri>
-        <Text style={styles.itemTitle}>{loading ? 'title' : title}</Text>
+        <SkeletonContent
+          isLoading={loading}
+          duration={800}
+          layout={[
+            {
+              key: 'img',
+              width: 72,
+              height: 50,
+              borderRadius: 4,
+            },
+            {
+              key: 'text',
+              width: 60,
+              height: 16,
+              borderRadius: 4,
+              marginTop: 10
+            }
+          ]}
+        >
+          <View style={styles.iconContainer}>
+            <SvgUri
+              width={42}
+              height={42}
+              uri={imageUrl || null}>
+            </SvgUri>
+          </View>
+          <Text style={styles.title}>{title}</Text>
+        </SkeletonContent>
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  item: {
+  container: {
     backgroundColor: '#fff',
     borderWidth: 2,
     borderColor: '#eee',
@@ -56,19 +78,22 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     marginRight: 8,
     alignItems: 'center',
-    justifyContent: 'space-between',
-    textAlign: 'center',
   },
-
-  itemSelected: {
+  selected: {
     borderColor: '#34CB79',
     borderWidth: 2,
   },
-
-  itemTitle: {
+  title: {
+    marginTop: 8,
+    flex: 1,
+    textAlignVertical: 'center',
     fontFamily: 'Roboto_400Regular',
     textAlign: 'center',
     fontSize: 13,
+  },
+  iconContainer: {
+    height: 42,
+    width: 42
   }
 })
 
