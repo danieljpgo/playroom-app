@@ -7,6 +7,7 @@ import MapView, { Marker } from 'react-native-maps';
 import { SvgUri } from 'react-native-svg';
 import api from '../../common/services/api';
 import * as Location from 'expo-location';
+import Item from './Item';
 
 interface Item {
   id: number,
@@ -91,7 +92,15 @@ const Points: React.FC = () => {
   const showMap = currentPosition[0] !== 0;
 
   const loadingMap = (<Text>Loading...</Text>) // @TODO Criar um loading melhor
-  const loadingItems = (<Text>Loading...</Text>) // @TODO Criar um loading melhor
+
+  const itemsLoading = [1, 2, 3].map((item) => (
+    <Item
+      key={String(item)}
+      id={item}
+      onSelect={() => null}
+      loading
+    />
+  ));
 
   return (
     <>
@@ -145,25 +154,18 @@ const Points: React.FC = () => {
           contentContainerStyle={{ paddingHorizontal: 30 }}
           showsVerticalScrollIndicator={false}>
           {
-            items.length !== 0
-              ? (items.map((item) => (
-                <TouchableOpacity
-                  activeOpacity={0.6}
-                  key={String(item.id)}
-                  style={[
-                    styles.item,
-                    selectedItems.includes(item.id) ? styles.selectedItem : {}
-                  ]}
-                  onPress={() => handleSelectItem(item.id)}>
-                  <SvgUri
-                    width={42}
-                    height={42}
-                    uri={item.image_url}>
-                  </SvgUri>
-                  <Text style={styles.itemTitle}>{item.title}</Text>
-                </TouchableOpacity>
-              )))
-              : loadingItems
+            items.length === 0
+              ? itemsLoading
+              : (
+                items.map((item) => (
+                  <Item
+                    key={String(item.id)}
+                    id={item.id}
+                    title={item.title}
+                    imageUrl={item.image_url}
+                    selected={selectedItems.includes(item.id)}
+                    onSelect={handleSelectItem} />
+                )))
           }
         </ScrollView>
       </View>
@@ -239,33 +241,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 16,
     marginBottom: 32,
-  },
-
-  item: {
-    backgroundColor: '#fff',
-    borderWidth: 2,
-    borderColor: '#eee',
-    height: 120,
-    width: 120,
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingTop: 20,
-    paddingBottom: 16,
-    marginRight: 8,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-
-    textAlign: 'center',
-  },
-
-  selectedItem: {
-    borderColor: '#34CB79',
-    borderWidth: 2,
-  },
-
-  itemTitle: {
-    fontFamily: 'Roboto_400Regular',
-    textAlign: 'center',
-    fontSize: 13,
-  },
+  }
 });
