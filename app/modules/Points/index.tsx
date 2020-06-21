@@ -4,7 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import Constants from 'expo-constants';
 import { Feather as Icon } from '@expo/vector-icons'
 import MapView, { Marker } from 'react-native-maps';
-import { SvgUri } from 'react-native-svg';
+import SkeletonContent from 'react-native-skeleton-content';
 import api from '../../common/services/api';
 import * as Location from 'expo-location';
 import Item from './Item';
@@ -91,8 +91,6 @@ const Points: React.FC = () => {
 
   const showMap = currentPosition[0] !== 0;
 
-  const loadingMap = (<Text>Loading...</Text>) // @TODO Criar um loading melhor
-
   const itemsLoading = [1, 2, 3].map((item) => (
     <Item
       key={String(item)}
@@ -113,41 +111,55 @@ const Points: React.FC = () => {
         <Text style={styles.title}>Bem vindo.</Text>
         <Text style={styles.description}>Encontre no mapa um ponto de coleta.</Text>
 
-        <View style={styles.mapContainer}>
-          {
-            showMap
-              ? (<MapView
-                style={styles.map}
-                initialRegion={{
-                  latitude: currentPosition[0],
-                  longitude: currentPosition[1],
-                  latitudeDelta: 0.014,
-                  longitudeDelta: 0.014,
-                }}>
-                {
-                  points.map(point => (
-                    <Marker
-                      key={String(point.id)}
-                      style={styles.mapMarker}
-                      onPress={() => handleNavigationDetail(point.id)}
-                      coordinate={{
-                        latitude: point.latitude,
-                        longitude: point.longitude,
-                      }} >
-                      <View style={styles.mapMarkerContainer}>
-                        <Image
-                          style={styles.mapMarkerImage}
-                          source={{ uri: point.image_url }} />
-                        <Text style={styles.mapMarkerTitle}>{point.name}</Text>
-                      </View>
-                    </Marker>
-                  ))
-                }
-              </MapView>)
-              : loadingMap
-          }
-        </View>
+        <SkeletonContent
+          isLoading={!showMap}
+          duration={800}
+          layout={[
+            {
+              key: 'map',
+              flex: 1,
+              width: '100%',
+              borderRadius: 10,
+              overflow: 'hidden',
+              marginTop: 16,
+            },
+          ]}>
+          <View style={styles.mapContainer}>
+            {
+              showMap && (
+                <MapView
+                  style={styles.map}
+                  initialRegion={{
+                    latitude: currentPosition[0],
+                    longitude: currentPosition[1],
+                    latitudeDelta: 0.014,
+                    longitudeDelta: 0.014,
+                  }}>
+                  {
+                    points.map(point => (
+                      <Marker
+                        key={String(point.id)}
+                        style={styles.mapMarker}
+                        onPress={() => handleNavigationDetail(point.id)}
+                        coordinate={{
+                          latitude: point.latitude,
+                          longitude: point.longitude,
+                        }} >
+                        <View style={styles.mapMarkerContainer}>
+                          <Image
+                            style={styles.mapMarkerImage}
+                            source={{ uri: point.image_url }} />
+                          <Text style={styles.mapMarkerTitle}>{point.name}</Text>
+                        </View>
+                      </Marker>
+                    ))
+                  }
+                </MapView>)
+            }
+          </View>
+        </SkeletonContent>
       </View>
+
       <View style={styles.itemsContainer}>
         <ScrollView
           horizontal
