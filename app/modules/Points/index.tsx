@@ -39,7 +39,6 @@ const Points: React.FC = () => {
   const route = useRoute();
 
   const routesParams = route.params as Params;
-  // @TODO Corrigir performance aqui
 
   useEffect(() => {
     async function getCurrentPosition() {
@@ -48,7 +47,6 @@ const Points: React.FC = () => {
         Alert.alert('Ops...', 'Precisamos de sua permissão para obter a localização');
         return;
       }
-
       const location = await Location.getCurrentPositionAsync();
       const { latitude, longitude } = location.coords;
       setCurrentPosition([latitude, longitude]);
@@ -69,6 +67,8 @@ const Points: React.FC = () => {
         items: selectedItems
       }
     }).then(response => {
+      console.log(routesParams.city, routesParams.state)
+      console.log(response.data)
       setPoints(response.data)
     });
   }, [selectedItems])

@@ -69,7 +69,7 @@ const Details: React.FC = () => {
           source={{ uri: data.point.image_url }}
         />
         <Text style={styles.pointName}>{data.point.name}</Text>
-        <Text style={styles.pointItems}>{data.items.map(item => item.title).join(',')}</Text>
+        <Text style={styles.pointItems}>{data.items.map(item => item.title).join(', ')}</Text>
 
         <View style={styles.address}>
           <Text style={styles.addressTitle}>Endereço</Text>
@@ -103,8 +103,6 @@ const Details: React.FC = () => {
 
 export default Details;
 
-// @TODO default props
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -114,7 +112,7 @@ const styles = StyleSheet.create({
 
   pointImage: {
     width: '100%',
-    height: 120,
+    height: 180,
     resizeMode: 'cover',
     borderRadius: 10,
     marginTop: 32,
