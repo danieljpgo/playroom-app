@@ -1,18 +1,89 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Feather as Icon } from '@expo/vector-icons';
-import { View, StyleSheet, Image, Text, ImageBackground, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, StyleSheet, Image, Text, ImageBackground, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
+import RNPickerSelect from 'react-native-picker-select';
+import axios from 'axios';
+
+interface IBGEState {
+  sigla: string,
+  nome: string,
+}
+
+interface IBGECity {
+  sigla: string,
+  nome: string
+}
+
+interface Item {
+  label: string,
+  value: string,
+}
+
+const sports = [
+  {
+    label: 'Football',
+    value: 'football',
+  },
+  {
+    label: 'Baseball',
+    value: 'baseball',
+  },
+  {
+    label: 'Hockey',
+    value: 'hockey',
+  },
+];
 
 const Home: React.FC = () => {
-  const [state, setState] = useState('');
-  const [city, setCity] = useState('');
+  // const [state, setState] = useState('');
+  // const [city, setCity] = useState('');
+
+  const [states, setStates] = useState<Item[]>([]);
+  const [cities, setCities] = useState<Item[]>([]);
+  const [selectedState, setSelectState] = useState<string>('default');
+  const [selectedCity, setSelectCity] = useState<string>('default');
+
   const navigation = useNavigation();
+
+  const defaultState = { label: 'Selecione o estado', value: null }
+  const defaultCity = { label: 'Selecione a cidade', value: null }
+
+  useEffect(() => {
+    axios.get<IBGEState[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
+      .then((response) => setStates(response.data.map((ibgeStates) => ({
+        label: ibgeStates.nome,
+        value: ibgeStates.sigla
+      }))));
+  }, []);
+
+  useEffect(() => {
+    console.log(selectedCity)
+    if (selectedState !== 'default') {
+      axios.get<IBGECity[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedState}/municipios`)
+        .then((response) => setCities(response.data.map((ibgeCities) => ({
+          label: ibgeCities.nome,
+          value: ibgeCities.nome
+        }))));
+    }
+  }, [selectedState]);
+
+  // console.log(selectedState)
+  // console.log(selectedCity)
+
+  function handleSelectState(value: string, index: number) {
+    setSelectState(value);
+  }
+
+  function handleSelectCity(value: string, index: number) {
+    setSelectCity(value);
+  }
 
   function handleNavigationToPoints() {
     navigation.navigate('Points', {
-      state,
-      city
+      state: selectedState,
+      city: selectedCity
     });
   }
 
@@ -33,23 +104,24 @@ const Home: React.FC = () => {
         </View>
 
         <View style={styles.footer}>
-          <TextInput
-            style={styles.input}
-            placeholder="Digite a UF"
-            maxLength={2}
-            autoCapitalize="characters"
-            autoCorrect={false}
-            value={state}
-            onChangeText={setState} />
-
-          <TextInput
-            style={styles.input}
-            placeholder="Digite a Cidade"
-            autoCorrect={false}
-            value={city}
-            onChangeText={setCity} />
-
+          <RNPickerSelect
+            style={{ viewContainer: styles.input }}
+            useNativeAndroidPickerStyle={true}
+            placeholder={defaultState}
+            items={states}
+            value={selectedState}
+            onValueChange={handleSelectState}
+          />
+          <RNPickerSelect
+            style={{ viewContainer: styles.input }}
+            useNativeAndroidPickerStyle={true}
+            placeholder={defaultCity}
+            items={cities}
+            value={selectedCity}
+            onValueChange={handleSelectCity}
+          />
           <RectButton
+            enabled={(selectedCity !== 'default') || (selectedState !== 'default')}
             style={styles.button}
             onPress={handleNavigationToPoints}
           >
@@ -102,16 +174,17 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
 
-  footer: {},
+  footer: {
+  },
 
   select: {},
 
   input: {
-    height: 60,
+    height: 50,
     backgroundColor: '#FFF',
     borderRadius: 10,
     marginBottom: 8,
-    paddingHorizontal: 24,
+    paddingHorizontal: 10,
     fontSize: 16,
   },
 
