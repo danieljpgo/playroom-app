@@ -21,25 +21,7 @@ interface Item {
   value: string,
 }
 
-const sports = [
-  {
-    label: 'Football',
-    value: 'football',
-  },
-  {
-    label: 'Baseball',
-    value: 'baseball',
-  },
-  {
-    label: 'Hockey',
-    value: 'hockey',
-  },
-];
-
 const Home: React.FC = () => {
-  // const [state, setState] = useState('');
-  // const [city, setCity] = useState('');
-
   const [states, setStates] = useState<Item[]>([]);
   const [cities, setCities] = useState<Item[]>([]);
   const [selectedState, setSelectState] = useState<string>('default');
@@ -68,9 +50,6 @@ const Home: React.FC = () => {
         }))));
     }
   }, [selectedState]);
-
-  // console.log(selectedState)
-  // console.log(selectedCity)
 
   function handleSelectState(value: string, index: number) {
     setSelectState(value);
