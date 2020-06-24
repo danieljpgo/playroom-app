@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ecoleta-mobile",
-    "slug": "ecoleta-mobile",
+    "name": "playroom-mobile",
+    "slug": "playroom-mobile",
     "platforms": [
       "ios",
       "android",
@@ -9,7 +9,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

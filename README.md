@@ -2,7 +2,7 @@
    <!-- <img src=".github/logo.png" width="150"/> -->
 </p>
 
-# Ecoleta
+# Playroom
 
 > under construction :recycle:
 
