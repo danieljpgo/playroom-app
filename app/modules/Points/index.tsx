@@ -67,8 +67,6 @@ const Points: React.FC = () => {
         items: selectedItems
       }
     }).then(response => {
-      console.log(routesParams.city, routesParams.state)
-      console.log(response.data)
       setPoints(response.data)
     });
   }, [selectedItems])
@@ -103,13 +101,12 @@ const Points: React.FC = () => {
   return (
     <>
       <View style={styles.container}>
-        {/* @TODO Criar um component de back */}
         <TouchableOpacity onPress={handleNavigationBack}>
-          <Icon name="arrow-left" size={20} color="#34cb79" />
+          <Icon name="arrow-left" size={20} color="#00AFB9" />
         </TouchableOpacity>
 
         <Text style={styles.title}>Bem vindo.</Text>
-        <Text style={styles.description}>Encontre no mapa um ponto de coleta.</Text>
+        <Text style={styles.description}>Encontre no mapa um ponto de doação.</Text>
 
         <SkeletonContent
           isLoading={!showMap}
@@ -229,7 +226,7 @@ const styles = StyleSheet.create({
   mapMarkerContainer: {
     width: 90,
     height: 70,
-    backgroundColor: '#34CB79',
+    backgroundColor: '#00AFB9',
     flexDirection: 'column',
     borderRadius: 8,
     overflow: 'hidden',

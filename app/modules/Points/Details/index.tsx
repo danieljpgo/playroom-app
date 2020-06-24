@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, Image, Text, SafeAreaView, Linking } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image, Text, SafeAreaView, Linking, ImageBackground } from 'react-native';
 import Constants from 'expo-constants';
 import * as MailComposer from 'expo-mail-composer';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -59,9 +59,10 @@ const Details: React.FC = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+
       <View style={styles.container}>
         <TouchableOpacity onPress={handleNavigationBack}>
-          <Icon name="arrow-left" size={20} color="#34cb79" />
+          <Icon name="arrow-left" size={20} color="#00AFB9" />
         </TouchableOpacity>
 
         <Image
@@ -71,10 +72,15 @@ const Details: React.FC = () => {
         <Text style={styles.pointName}>{data.point.name}</Text>
         <Text style={styles.pointItems}>{data.items.map(item => item.title).join(', ')}</Text>
 
-        <View style={styles.address}>
-          <Text style={styles.addressTitle}>Endereço</Text>
-          <Text style={styles.addressContent}>{`${data.point.city}, ${data.point.state}`}</Text>
-        </View>
+        <ImageBackground
+          source={require('../../../../assets/point-background-car.png')}
+          style={styles.backgroundContainer}
+          imageStyle={styles.background}>
+          <View style={styles.address}>
+            <Text style={styles.addressTitle}>Endereço</Text>
+            <Text style={styles.addressContent}>{`${data.point.city}, ${data.point.state}`}</Text>
+          </View>
+        </ImageBackground>
       </View>
 
       <View style={styles.footer}>
@@ -104,6 +110,17 @@ const Details: React.FC = () => {
 export default Details;
 
 const styles = StyleSheet.create({
+  backgroundContainer: {
+    flex: 1,
+  },
+
+  background: {
+    marginLeft: 140,
+    marginTop: 140,
+    height: 130,
+    width: 200,
+  },
+
   container: {
     flex: 1,
     padding: 32,
@@ -119,7 +136,7 @@ const styles = StyleSheet.create({
   },
 
   pointName: {
-    color: '#322153',
+    color: '#3f3d56',
     fontSize: 28,
     fontFamily: 'Ubuntu_700Bold',
     marginTop: 24,
@@ -138,7 +155,7 @@ const styles = StyleSheet.create({
   },
 
   addressTitle: {
-    color: '#322153',
+    color: '#3f3d56',
     fontFamily: 'Roboto_500Medium',
     fontSize: 16,
   },
@@ -161,7 +178,7 @@ const styles = StyleSheet.create({
 
   button: {
     width: '48%',
-    backgroundColor: '#34CB79',
+    backgroundColor: '#00AFB9',
     borderRadius: 10,
     height: 50,
     flexDirection: 'row',

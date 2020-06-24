@@ -80,8 +80,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   selected: {
-    borderColor: '#34CB79',
+    borderColor: '#00AFB9',
     borderWidth: 2,
+    // backgroundColor: '#00afb91a'
   },
   title: {
     marginTop: 8,

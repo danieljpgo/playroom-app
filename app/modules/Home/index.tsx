@@ -41,7 +41,6 @@ const Home: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log(selectedCity)
     if (selectedState !== 'default') {
       axios.get<IBGECity[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedState}/municipios`)
         .then((response) => setCities(response.data.map((ibgeCities) => ({
@@ -75,10 +74,15 @@ const Home: React.FC = () => {
         style={styles.container}
         imageStyle={styles.background}>
         <View style={styles.main}>
-          <Image source={require('../../../assets/logo.png')} />
+          <View style={styles.brandContainer}>
+            <Image
+              style={styles.brand}
+              source={require('../../../assets/logo.png')} />
+            <Text style={styles.brandName}>Playroom</Text>
+          </View>
           <View>
-            <Text style={styles.title}>Seu marketplace de resíduos </Text>
-            <Text style={styles.description}>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</Text>
+            <Text style={styles.title}>Seu marketplace de doação de brinquedos </Text>
+            <Text style={styles.description}>Ajudamos pessoas a encontrarem pontos de doação de brinquedos.</Text>
           </View>
         </View>
 
@@ -127,21 +131,39 @@ const styles = StyleSheet.create({
   },
 
   background: {
-    width: 274,
-    height: 368
+    width: 400,
+    height: 298,
   },
 
   main: {
+    marginTop: 240,
     flex: 1,
     justifyContent: 'center',
   },
 
-  title: {
-    color: '#322153',
+  brandContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  brand: {
+    height: 60,
+    width: 60
+  },
+
+  brandName: {
+    marginLeft: 12,
+    color: '#3f3d56',
     fontSize: 32,
     fontFamily: 'Ubuntu_700Bold',
-    maxWidth: 260,
-    marginTop: 64,
+  },
+
+  title: {
+    color: '#3f3d56',
+    fontSize: 28,
+    fontFamily: 'Ubuntu_700Bold',
+    // maxWidth: 260,
+    marginTop: 20,
   },
 
   description: {
@@ -168,7 +190,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#34CB79',
+    backgroundColor: '#00AFB9',
     height: 60,
     flexDirection: 'row',
     borderRadius: 10,
