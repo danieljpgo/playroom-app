@@ -59,50 +59,47 @@ const Details: React.FC = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-
-      <View style={styles.container}>
-        <TouchableOpacity onPress={handleNavigationBack}>
-          <Icon name="arrow-left" size={20} color="#00AFB9" />
-        </TouchableOpacity>
-
-        <Image
-          style={styles.pointImage}
-          source={{ uri: data.point.image_url }}
-        />
-        <Text style={styles.pointName}>{data.point.name}</Text>
-        <Text style={styles.pointItems}>{data.items.map(item => item.title).join(', ')}</Text>
-
-        <ImageBackground
-          source={require('../../../../assets/point-background-car.png')}
-          style={styles.backgroundContainer}
-          imageStyle={styles.background}>
+      <ImageBackground
+        source={require('../../../../assets/point-background-car.png')}
+        style={styles.backgroundContainer}
+        imageStyle={styles.background}>
+        <View style={styles.container}>
+          <TouchableOpacity onPress={handleNavigationBack}>
+            <Icon name="arrow-left" size={20} color="#00AFB9" />
+          </TouchableOpacity>
+          <Image
+            style={styles.pointImage}
+            source={{ uri: data.point.image_url }}
+          />
+          <Text style={styles.pointName}>{data.point.name}</Text>
+          <Text style={styles.pointItems}>{data.items.map(item => item.title).join(', ')}</Text>
           <View style={styles.address}>
             <Text style={styles.addressTitle}>Endereço</Text>
             <Text style={styles.addressContent}>{`${data.point.city}, ${data.point.state}`}</Text>
           </View>
-        </ImageBackground>
-      </View>
+        </View>
 
-      <View style={styles.footer}>
-        <RectButton
-          style={styles.button}
-          onPress={() => handleComposeWhatsapp()}>
-          <FontAwesome
-            name="whatsapp"
-            size={20}
-            color="#ffffff" />
-          <Text style={styles.buttonText}>Whatsapp</Text>
-        </RectButton>
-        <RectButton
-          style={styles.button}
-          onPress={() => handleComposeMail()}>
-          <Icon
-            name="mail"
-            size={20}
-            color="#ffffff" />
-          <Text style={styles.buttonText}>Email</Text>
-        </RectButton>
-      </View>
+        <View style={styles.footer}>
+          <RectButton
+            style={styles.button}
+            onPress={() => handleComposeWhatsapp()}>
+            <FontAwesome
+              name="whatsapp"
+              size={20}
+              color="#ffffff" />
+            <Text style={styles.buttonText}>Whatsapp</Text>
+          </RectButton>
+          <RectButton
+            style={styles.button}
+            onPress={() => handleComposeMail()}>
+            <Icon
+              name="mail"
+              size={20}
+              color="#ffffff" />
+            <Text style={styles.buttonText}>Email</Text>
+          </RectButton>
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   )
 }
@@ -115,8 +112,8 @@ const styles = StyleSheet.create({
   },
 
   background: {
-    marginLeft: 140,
-    marginTop: 140,
+    marginLeft: 180,
+    marginTop: 520,
     height: 130,
     width: 200,
   },

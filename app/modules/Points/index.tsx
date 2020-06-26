@@ -230,7 +230,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     borderRadius: 8,
     overflow: 'hidden',
-    alignItems: 'center'
+    paddingHorizontal: 6,
+    alignItems: 'center',
   },
 
   mapMarkerImage: {
@@ -243,8 +244,8 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: 'Roboto_400Regular',
     color: '#FFF',
-    fontSize: 13,
     lineHeight: 23,
+    fontSize: 10,
   },
 
   itemsContainer: {

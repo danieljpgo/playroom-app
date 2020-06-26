@@ -53,8 +53,8 @@ const Item: React.FC<Props> = (props) => {
         >
           <View style={styles.iconContainer}>
             <SvgUri
-              width={42}
-              height={42}
+              width={56}
+              height={56}
               uri={imageUrl || null}>
             </SvgUri>
           </View>
@@ -93,8 +93,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   iconContainer: {
-    height: 42,
-    width: 42
+    height: 56,
+    width: 56
   }
 })
 
