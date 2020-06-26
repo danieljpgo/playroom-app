@@ -76,7 +76,9 @@ under construction
 The main features of the project are:
 - **Show** donation points on the map.
 - **Filter** donation points by their categories.
-- Current position on the map.
+- Current **position** on the map.
+- **Mail** composer.
+- **Whatsapp** composer.
 
 ## :computer: Integrations
 This project is part of the **Playroom** system, the other projects are located at:
