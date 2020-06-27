@@ -99,7 +99,7 @@ yarn start
 Make sure to go to the [Playroom Backend](https://github.com/danieljpgo/playroom-backend) repository and follow the instructions in order to get the api running in your machine.
 
 ## :page_with_curl: License
-This project is under the [MIT license](https://github.com/danieljpgo/playroom-mobile/master/blob/LICENSE).
+This project is under the [MIT license](https://github.com/danieljpgo/playroom-mobile/blob/master/LICENSE).
 Released in 2020.
 
 Developed by [Daniel Jorge](https://github.com/danieljpgo)
