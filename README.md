@@ -55,22 +55,12 @@
    <img
       alt="smarthphone"
       title="Playroom"
-      src=".github/home-background.svg"
-      width="300" />
-   <img
-      alt="smarthphone"
-      title="Playroom"
       src=".github/anim.gif"
       width="230px" />
-   <img
-      alt="smarthphone"
-      title="Playroom"
-      src=".github/point-background-car.png"
-      width="200px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </h1>
 
 ## :memo: Project
-under construction 
+Project aims to list toy donation companies and institutions, offering an easily accessible platform both for finding donation points and for registering new entities.
 
 ## :rocket: Features
 The main features of the project are:
@@ -89,6 +79,7 @@ This project is part of the **Playroom** system, the other projects are located 
 The main technologies used to develop the project were:
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.io/)
+- [React Navigation](https://reactnavigation.org/)
 - [Typescript](https://www.typescriptlang.org/)
 
 ## :runner: Getting Started
