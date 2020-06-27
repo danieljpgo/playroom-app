@@ -100,6 +100,6 @@ Make sure to go to the [Playroom Backend](https://github.com/danieljpgo/playroom
 
 ## :page_with_curl: License
 This project is under the [MIT license](https://github.com/danieljpgo/playroom-mobile/blob/master/LICENSE).
-Released in 2020.
+<div>Released in 2020.</div>
 
 Developed by [Daniel Jorge](https://github.com/danieljpgo)
