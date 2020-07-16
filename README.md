@@ -96,7 +96,7 @@ In order to **start** the application in a development environment, execute:
 ```
 yarn start
 ```
-Make sure to go to the [Playroom Backend](https://github.com/danieljpgo/playroom-api) repository and follow the instructions in order to get the api running in your machine.
+Make sure to go to the [Playroom Api](https://github.com/danieljpgo/playroom-api) repository and follow the instructions in order to get the api running in your machine.
 
 ## :page_with_curl: License
 This project is under the [MIT license](https://github.com/danieljpgo/playroom-app/blob/master/LICENSE).
