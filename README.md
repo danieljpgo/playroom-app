@@ -1,13 +1,11 @@
-<div align="center">
+<h1 align="center">
    <img
       alt="Playroom"
       title="Playroom"
       src=".github/logo.svg"
       width="150px" />
    &nbsp;<div align="center">Playroom</div>
-</div>
- 
- &nbsp;
+</h1>
  
 <h1> Playroom Mobile </h1>
 
