@@ -1,11 +1,13 @@
-<h1 align="center">
+<div align="center">
    <img
       alt="Playroom"
       title="Playroom"
       src=".github/logo.svg"
       width="150px" />
    &nbsp;<div align="center">Playroom</div>
-</h1>
+</div>
+ 
+ &nbsp;
  
 <h1> Playroom Mobile </h1>
 
@@ -40,7 +42,7 @@
 
 > A marketplace for finding and registering toy donation places. :jigsaw:
 
-----
+ &nbsp;
 
 <p align="center">
    <a href="#memo-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -102,4 +104,4 @@ Make sure to go to the [Playroom Backend](https://github.com/danieljpgo/playroom
 This project is under the [MIT license](https://github.com/danieljpgo/playroom-mobile/blob/master/LICENSE).
 <div>Released in 2020.</div>
 
-Developed by [Daniel Jorge](https://github.com/danieljpgo)
+Developed by [Daniel Jorge](https://github.com/danieljpgo):rocket:
