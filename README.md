@@ -7,7 +7,7 @@
    &nbsp;<div align="center">Playroom</div>
 </h1>
  
-<h1> Playroom Mobile </h1>
+<h1> Playroom App </h1>
 
 <p align="left">
    <a href="https://github.com/danieljpgo">
@@ -18,22 +18,22 @@
    </a>
    <img
       alt="languages"
-      src="https://img.shields.io/github/languages/count/danieljpgo/playroom-mobile?color=0081A7&style=flat-square&labelColor=3f3d56"
+      src="https://img.shields.io/github/languages/count/danieljpgo/playroom-app?color=0081A7&style=flat-square&labelColor=3f3d56"
    />
-   <a href="https://github.com/danieljpgo/playroom-mobile/stargazers">
+   <a href="https://github.com/danieljpgo/playroom-app/stargazers">
       <img
          alt="stars"
-         src="https://img.shields.io/github/stars/danieljpgo/playroom-mobile?color=0081A7&style=flat-square&labelColor=3f3d56"/>
+         src="https://img.shields.io/github/stars/danieljpgo/playroom-app?color=0081A7&style=flat-square&labelColor=3f3d56"/>
    </a>
-   <a href="https://github.com/danieljpgo/playroom-mobile/network/members">
+   <a href="https://github.com/danieljpgo/playroom-app/network/members">
       <img
          alt="forks"
-         src="https://img.shields.io/github/forks/danieljpgo/playroom-mobile?color=0081A7&style=flat-square&labelColor=3f3d56"/>
+         src="https://img.shields.io/github/forks/danieljpgo/playroom-app?color=0081A7&style=flat-square&labelColor=3f3d56"/>
    </a>
-   <a href="https://github.com/danieljpgo/playroom-mobile/graphs/contributors">
+   <a href="https://github.com/danieljpgo/playroom-app/graphs/contributors">
       <img
          alt="contributors"
-         src="https://img.shields.io/github/contributors/danieljpgo/playroom-mobile?color=0081A7&style=flat-square&labelColor=3f3d56"/>
+         src="https://img.shields.io/github/contributors/danieljpgo/playroom-app?color=0081A7&style=flat-square&labelColor=3f3d56"/>
    </a>
   <img alt="License" src="https://img.shields.io/badge/license-MIT-0081A7?style=flat-square&labelColor=3f3d56">
 </p>
@@ -72,8 +72,8 @@ The main features of the project are:
 
 ## :computer: Integrations
 This project is part of the **Playroom** system, the other projects are located at:
-- [Playroom Frontend](https://github.com/danieljpgo/playroom-frontend)
-- [Playroom Backend](https://github.com/danieljpgo/playroom-backend)
+- [Playroom Web](https://github.com/danieljpgo/playroom-web)
+- [Playroom Api](https://github.com/danieljpgo/playroom-api)
 
 ## :man_technologist: Technologies
 The main technologies used to develop the project were:
@@ -85,7 +85,7 @@ The main technologies used to develop the project were:
 ## :runner: Getting Started
 First, make sure you have **[Node](https://nodejs.org/en/)** and **[Yarn](https://yarnpkg.com/)**, then clone the project with:
 ```
-git clone https://github.com/danieljpgo/playroom-mobile.git
+git clone https://github.com/danieljpgo/playroom-app.git
 ```
 
 With **[yarn](https://yarnpkg.com/)**, install dependencies:
@@ -96,10 +96,10 @@ In order to **start** the application in a development environment, execute:
 ```
 yarn start
 ```
-Make sure to go to the [Playroom Backend](https://github.com/danieljpgo/playroom-backend) repository and follow the instructions in order to get the api running in your machine.
+Make sure to go to the [Playroom Backend](https://github.com/danieljpgo/playroom-api) repository and follow the instructions in order to get the api running in your machine.
 
 ## :page_with_curl: License
-This project is under the [MIT license](https://github.com/danieljpgo/playroom-mobile/blob/master/LICENSE).
+This project is under the [MIT license](https://github.com/danieljpgo/playroom-app/blob/master/LICENSE).
 <div>Released in 2020.</div>
 
 Developed by [Daniel Jorge](https://github.com/danieljpgo)
