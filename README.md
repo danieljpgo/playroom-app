@@ -102,4 +102,4 @@ Make sure to go to the [Playroom Api](https://github.com/danieljpgo/playroom-api
 This project is under the [MIT license](https://github.com/danieljpgo/playroom-app/blob/master/LICENSE).
 <div>Released in 2020.</div>
 
-Developed by [Daniel Jorge](https://github.com/danieljpgo)
+Make with ❤️ by [Daniel Jorge](https://github.com/danieljpgo)
