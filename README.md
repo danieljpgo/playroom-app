@@ -43,12 +43,12 @@
  &nbsp;
 
 <p align="center">
-   <a href="#memo-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-   <a href="#rocket-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-   <a href="#computer-integrations">Integrations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-   <a href="#man_technologist-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-   <a href="#runner-getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-   <a href="#page_with_curl-license">License</a>
+   <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#integrations">Integrations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#license">License</a>
 </p>
 
 <h1 align="center">
@@ -59,10 +59,10 @@
       width="230px" />
 </h1>
 
-## :memo: Project
+## Project
 Project aims to list toy donation companies and institutions, offering an easily accessible platform both for finding donation points and for registering new entities.
 
-## :rocket: Features
+## Features
 The main features of the project are:
 - **Show** donation points on the map.
 - **Filter** donation points by their categories.
@@ -70,19 +70,19 @@ The main features of the project are:
 - **Mail** composer with points info.
 - **Whatsapp**  with points info.
 
-## :computer: Integrations
+## Integrations
 This project is part of the **Playroom** system, the other projects are located at:
 - [Playroom Web](https://github.com/danieljpgo/playroom-web)
 - [Playroom Api](https://github.com/danieljpgo/playroom-api)
 
-## :man_technologist: Technologies
+## Technologies
 The main technologies used to develop the project were:
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.io/)
 - [React Navigation](https://reactnavigation.org/)
 - [Typescript](https://www.typescriptlang.org/)
 
-## :runner: Getting Started
+## Getting Started
 First, make sure you have **[Node](https://nodejs.org/en/)** and **[Yarn](https://yarnpkg.com/)**, then clone the project with:
 ```
 git clone https://github.com/danieljpgo/playroom-app.git
@@ -98,7 +98,7 @@ yarn start
 ```
 Make sure to go to the [Playroom Api](https://github.com/danieljpgo/playroom-api) repository and follow the instructions in order to get the api running in your machine.
 
-## :page_with_curl: License
+## License
 This project is under the [MIT license](https://github.com/danieljpgo/playroom-app/blob/master/LICENSE).
 <div>Released in 2020.</div>
 
